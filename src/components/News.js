@@ -33,7 +33,7 @@ export class News extends Component {
         this.setState({articles:parsedData.articles, totalResults: parsedData.totalResults, loading:false});
         this.props.setProgress(100);
     }
-
+    
     // handlePrev = async ()=>{
     //     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=fcd3533582ed4992acd8be6c88696fe4&page=${this.state.page - 1}&pagesize=${this.props.pagesize}`;
     //     this.setState({
@@ -48,7 +48,7 @@ export class News extends Component {
     //     });
 
     // }
-
+    //Won'treusing this function for componentDidMount be usefull? Code kaam ho jayega...
     fetchMoreData= async () =>{
         this.props.setProgress(10);
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.api}&page=${this.state.page + 1}&pagesize=${this.props.pagesize}`;
@@ -108,7 +108,7 @@ export class News extends Component {
               loader={<Spinner/>}
               endMessage={
                 <p style={{ textAlign: 'center' }}>
-                  <b>Yay! You have seen it all</b>
+                  <b>That is it for Now! <br> Come back later for more news...</b>
                 </p>
               }
               >
